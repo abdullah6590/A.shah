@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Shah - Professional CV</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --sidebar-bg: #0f172a;
+            --sidebar-text: #f1f5f9;
+            --sidebar-accent: #60a5fa;
+            
+            --main-bg: #ffffff;
+            --main-text: #334155;
+            --main-title: #1e293b;
+            --main-accent: #2563eb;
+            
+            --border-light: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #cbd5e1;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            /* Crucial for printing colors correctly */
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .cv-container {
+            width: 210mm;
+            min-height: 297mm;
+            background: var(--main-bg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* SIDEBAR (LEFT) */
+        .sidebar {
+            width: 32%;
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-name {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .sidebar-title {
+            font-size: 10.5pt;
+            font-weight: 500;
+            color: var(--sidebar-accent);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .sidebar-section {
+            margin-bottom: 16px;
+        }
+
+        .sidebar-heading {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .sidebar-heading i {
+            color: var(--sidebar-accent);
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 8.5pt;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .contact-item i {
+            font-size: 10.5pt;
+            color: var(--sidebar-accent);
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--sidebar-text);
+            text-decoration: none;
+        }
+
+        /* Skills Tags */
+        .skill-group {
+            margin-bottom: 12px;
+        }
+        
+        .skill-title {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-size: 7.5pt;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Ed & Cert Sidebar */
+        .ed-item {
+            margin-bottom: 12px;
+        }
+        
+        .ed-title {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+        
+        .ed-inst {
+            font-size: 8pt;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        /* MAIN CONTENT (RIGHT) */
+        .main-content {
+            width: 68%;
+            padding: 20px 30px;
+        }
+
+        .main-section {
+            margin-bottom: 12px;
+        }
+
+        .main-heading {
+            font-size: 13pt;
+            font-weight: 700;
+            color: var(--main-title);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .main-heading i {
+            color: var(--main-accent);
+        }
+
+        .summary-text {
+            font-size: 9pt;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        /* Experience Item */
+        .exp-item {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 5px;
+        }
+
+        .exp-title {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: var(--main-title);
+        }
+
+        .exp-company {
+            font-size: 10pt;
+            font-weight: 600;
+            color: var(--main-accent);
+        }
+
+        .exp-date {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 4px;
+        }
+
+        .exp-bullets li {
+            font-size: 8.5pt;
+            line-height: 1.35;
+            margin-bottom: 3px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .exp-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--main-accent);
+            font-weight: bold;
+            font-size: 11pt;
+            line-height: 1.1;
+        }
+
+        /* Projects */
+        .proj-item {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .proj-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--main-title);
+            margin-bottom: 3px;
+        }
+        
+        .proj-desc {
+            font-size: 9pt;
+            line-height: 1.5;
+            margin-bottom: 3px;
+        }
+        
+        .proj-tech {
+            font-size: 8pt;
+            font-weight: 600;
+            color: var(--main-accent);
+        }
+
+        /* Print Specifics */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h1 class="sidebar-name">Abdullah<br>Shah</h1>
+            <div class="sidebar-title">Senior Web Developer<br>& CRM Specialist</div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading"><i class="fas fa-address-card"></i> Contact</h2>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+923359020201">+92 335 9020201</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:abdullahshah2003@gmail.com">abdullahshah2003@gmail.com</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Remote / International Work</span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.linkedin.com/in/abdullahshah001/">linkedin.com/in/abdullahshah001</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/abdullah6590">github.com/abdullah6590</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading"><i class="fas fa-code"></i> Skills</h2>
+                
+                <div class="skill-group">
+                    <span class="skill-title">Web & Frontend</span>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <span class="skill-title">CRM & Business</span>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Bitrix24 CRM</span>
+                        <span class="skill-tag">GoHighLevel</span>
+                        <span class="skill-tag">Automations</span>
+                        <span class="skill-tag">Lead Mgmt</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <span class="skill-title">CMS</span>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Elementor</span>
+                        <span class="skill-tag">Web Integrations</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <span class="skill-title">AI & Backend Tools</span>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="ed-item">
+                    <div class="ed-title">BS Artificial Intelligence</div>
+                    <div class="ed-inst">Abdul Wali Khan Univ, Mardan</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section" style="margin-bottom: 0;">
+                <h2 class="sidebar-heading"><i class="fas fa-certificate"></i> Certifications</h2>
+                <div class="ed-item">
+                    <div class="ed-title">Generative AI Dev (Top Performer)</div>
+                    <div class="ed-inst">UETIANS LEF & NCEAC-HEC</div>
+                </div>
+                <div class="ed-item">
+                    <div class="ed-title">Digital Marketing & E-commerce</div>
+                    <div class="ed-inst">Google / Coursera</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="main-section">
+                <h2 class="main-heading"><i class="fas fa-user-tie"></i> Professional Profile</h2>
+                <p class="summary-text">
+                    Results-driven Senior Web Developer and CRM Specialist with 6 years of practical experience building responsive, business-focused web solutions and optimizing CRM operations. Proven track record of combining modern frontend development (React, Next.js, WordPress) with powerful business automation platforms (Bitrix24, GoHighLevel) to streamline sales pipelines, enhance user experiences, and drive digital transformation. Experienced in delivering premium web architecture and robust internal business tools for international clients.
+                </p>
+            </div>
+
+            <div class="main-section">
+                <h2 class="main-heading"><i class="fas fa-briefcase"></i> Experience</h2>
+                
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">CRM Specialist & Web Developer</div>
+                            <div class="exp-company">Avayo Middle East Co. LTD</div>
+                        </div>
+                        <div class="exp-date">Jun 2023 – Present</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Engineered and managed comprehensive CRM operations using Bitrix24 across multiple divisions, significantly improving operational efficiency.</li>
+                        <li>Developed modern, responsive business websites, seamlessly integrating them with backend CRM systems for automated lead capture.</li>
+                        <li>Architected quotation management and automated client follow-up workflows, optimizing the sales pipeline and boosting conversion rates by approx. 25%.</li>
+                        <li>Managed large-scale customer databases with thousands of records, ensuring data integrity and implementing lead scoring algorithms.</li>
+                        <li>Collaborated with senior management on digital transformation initiatives, deploying internal business tools and analytical dashboards.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Web Developer</div>
+                            <div class="exp-company">SaaS Marketing (Canada)</div>
+                        </div>
+                        <div class="exp-date">Feb 2021 – May 2023</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Developed responsive, high-performance landing pages and business websites optimized for global digital marketing campaigns.</li>
+                        <li>Implemented UI/UX enhancements and modernized frontend architectures using HTML, CSS, JavaScript, and React.</li>
+                        <li>Streamlined website performance and improved Core Web Vitals to directly support SEO objectives and increase user retention.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Web Developer</div>
+                            <div class="exp-company">oklaelectrique (Canada)</div>
+                        </div>
+                        <div class="exp-date">Jan 2020 – Jan 2021</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Designed and built e-commerce and corporate websites focusing on clean aesthetics and responsive layouts.</li>
+                        <li>Integrated product catalogs and CMS systems (WordPress/Elementor) to allow seamless client updates.</li>
+                        <li>Optimized web assets and implemented technical SEO best practices to increase organic visibility for the business.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item" style="margin-bottom: 0;">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Co-Instructor – Artificial Intelligence</div>
+                            <div class="exp-company">NAVTTC Training Program</div>
+                        </div>
+                        <div class="exp-date">Jan 2025 – Present</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Deliver technical training in Python, Machine Learning, and Generative AI, while mentoring diploma students on real-world software development workflows.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-section" style="margin-bottom: 0;">
+                <h2 class="main-heading"><i class="fas fa-laptop-code"></i> Featured Projects</h2>
+                
+                <div class="proj-item">
+                    <div class="proj-title">AI-Powered PPE Detection System</div>
+                    <div class="proj-desc">Developed a real-time workplace safety monitoring dashboard capable of detecting hardhats and vests. Built automated violation alerts with low-latency performance.</div>
+                    <div class="proj-tech">Tech: Python, YOLOv11, OpenCV, Streamlit</div>
+                </div>
+                
+                <div class="proj-item" style="margin-bottom: 0;">
+                    <div class="proj-title">Responsive Car Rental Platform</div>
+                    <div class="proj-desc">Architected and developed a full-featured responsive car rental website designed to enhance booking convenience and mobile accessibility for clients.</div>
+                    <div class="proj-tech">Tech: HTML5, CSS3, JavaScript, UI/UX</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
